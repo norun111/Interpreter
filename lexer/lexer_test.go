@@ -13,7 +13,7 @@ func TextNextToken(t *testing.T) {
  		      let add = fn(x, y) {
 		      	x + y;
 			  };
-			  let result = add(five, ten)
+			  let result = add(five, ten);
 			 `
 
 	tests := []struct {
@@ -24,13 +24,36 @@ func TextNextToken(t *testing.T) {
 		{token2.IDENT, "five"},
 		{token2.ASSIGN, "="},
 		{token2.INT, "5"},
+		{token2.SEMICOLON, ";"},
+		{token2.LET, "let"},
+		{token2.IDENT, "ten"},
 		{token2.ASSIGN, "="},
-		{token2.PLUS, "+"},
+		{token2.INT, "10"},
+		{token2.SEMICOLON, ";"},
+		{token2.LET, "let"},
+		{token2.IDENT, "add"},
+		{token2.ASSIGN, "="},
+		{token2.FUNCTION, "fn"},
 		{token2.LPAREN, "("},
+		{token2.IDENT, "x"},
+		{token2.COMMA, ","},
+		{token2.IDENT, "y"},
 		{token2.RPAREN, ")"},
 		{token2.LBRACE, "{"},
+		{token2.IDENT, "x"},
+		{token2.PLUS, "+"},
+		{token2.IDENT, "y"},
 		{token2.RBRACE, "}"},
+		{token2.SEMICOLON, ";"},
+		{token2.LET, "let"},
+		{token2.IDENT, "result"},
+		{token2.ASSIGN, "="},
+		{token2.IDENT, "add"},
+		{token2.LPAREN, "("},
+		{token2.IDENT, "five"},
 		{token2.COMMA, ","},
+		{token2.IDENT, "ten"},
+		{token2.RPAREN, ")"},
 		{token2.SEMICOLON, ";"},
 		{token2.EOF, ""},
 	}
