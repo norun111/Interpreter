@@ -97,3 +97,15 @@ func (l *Lexer) skipWhitespace() {
 		l.readChar()
 	}
 }
+
+func (l *Lexer) readNumber() string {
+	position := l.position
+	for isDigit(l.ch) {
+		l.readChar()
+	}
+	return l.input[position:l.position]
+}
+
+func isDigit(ch byte) bool {
+	return '0' <= ch && ch <= '9'
+}
