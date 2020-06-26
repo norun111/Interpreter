@@ -82,6 +82,7 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 func (l *Lexer) readIdentifier() string {
 	position := l.position
 	//英字の間だけ字句解析の位置を進めていく
+	//isLetterがtrueの間
 	for isLetter(l.ch) {
 		l.readChar()
 	}
