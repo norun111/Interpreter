@@ -22,12 +22,13 @@ type Program struct {
 
 type LetStatement struct {
 	Token token.Token
-	Name  *Identifier
-	Value Expression
+	Name  *Identifier //束縛の識別子を保持
+	Value Expression  //値を生成する式を保持する為
 }
+//Statement interfaceを満たす
+func (ls *LetStatement) statementNode() {}
 
-func (ls *LetStatement) statement() {}
-
+//Node interfaceを満たす
 func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal }
 
 type Identifier struct {
