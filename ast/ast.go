@@ -31,6 +31,7 @@ func (ls *LetStatement) statementNode() {}
 //Node interfaceを満たす
 func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal }
 
+//let x = 5;　におけるxのような識別子を保持する為
 type Identifier struct {
 	Token token.Token
 	Value string
