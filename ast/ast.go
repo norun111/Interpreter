@@ -25,6 +25,12 @@ type LetStatement struct {
 	Name  *Identifier //束縛の識別子を保持
 	Value Expression  //値を生成する式を保持する為
 }
+
+type ReturnStatement struct {
+	Token token.Token		//returnトークン
+	ReturnValue Expression
+}
+
 //Statement interfaceを満たす
 func (ls *LetStatement) statementNode() {}
 
@@ -48,3 +54,7 @@ func (p *Program) TokenLiteral() string {
 		return ""
 	}
 }
+
+//Return
+func (rs *ReturnStatement) statementNode() {}
+func (rs *ReturnStatement) TokenLiteral() string {return rs.Token.Literal}
