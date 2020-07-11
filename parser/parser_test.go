@@ -17,10 +17,10 @@ let foobar = 838383;
 
 	program := p.ParseProgram()
 	if program == nil {
-		t.Fatalf("PArsePrigram() returned nil")
+		t.Fatalf("ParseProgram() returned nil")
 	}
 	if len(program.Statements) != 3 {
-		t.Fatalf("program.Statement does not contain 3 statements. got=%d", len(program.Statements))
+		t.Fatalf("program.Statements does not contain 3 statements. got=%d", len(program.Statements))
 	}
 
 	tests := []struct {
