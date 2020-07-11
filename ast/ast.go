@@ -28,7 +28,7 @@ type LetStatement struct {
 
 type ReturnStatement struct {
 	Token token.Token		//returnトークン
-	ReturnValue Expression
+	ReturnValue Expression // return <expression>;
 }
 
 //Statement interfaceを満たす
